@@ -7,14 +7,19 @@ import java.util.List;
 
 public class StatefulLambda {
 
+    /**
+     * Example for stateful lambda exp
+     */
     public static void main(String[] args) {
 
-        /**
-         * Example for stateful lambda exp
-         */
         Integer[] intArray = {1, 2, 3, 4, 5, 6, 7, 8};
         List<Integer> listOfIntegers =
                 new ArrayList<>(Arrays.asList(intArray));
+        statefulWithSerial(listOfIntegers);
+        statefulWithParallel(listOfIntegers);
+    }
+
+    private static void statefulWithSerial(List<Integer> listOfIntegers) {
 
         List<Integer> serialStorage = new ArrayList<>();
 
@@ -33,6 +38,8 @@ public class StatefulLambda {
                 .stream()
                 .forEachOrdered(element -> System.out.print(element + " "));
         System.out.println("");
+    }
+    private static void statefulWithParallel(List<Integer> listOfIntegers) {
 
         System.out.println("Parallel stream:");
         List<Integer> parallelStorage = Collections.synchronizedList(

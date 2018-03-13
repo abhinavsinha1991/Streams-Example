@@ -4,12 +4,12 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class StreamExample {
+public class StreamsComparison {
 
     public static void main(String[] args) {
         List<Integer> listNumbers = Arrays.asList(1,2,3,45,66,0,4,68);
-        System.out.println("Using sumIterator" + sumIterator(listNumbers));
-        System.out.println("Using sumStream " + sumStream(listNumbers));
+        System.out.println("Using sumIterator :" + sumIterator(listNumbers));
+        System.out.println("Using sumStream :" + sumStream(listNumbers));
     }
 
     /**
@@ -39,3 +39,4 @@ public class StreamExample {
     }
 
 }
+

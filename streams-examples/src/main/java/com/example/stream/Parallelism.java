@@ -9,7 +9,11 @@ import java.util.stream.Stream;
 public class Parallelism {
 
     public static void main(String[] args) {
+        example();
+        reusability();
+    }
 
+    private static void example() {
         /**
          * Basic example of parallel streams
          */
@@ -31,6 +35,10 @@ public class Parallelism {
 
         System.out.println("Sum of Integers less than 5 is : " + sumOfInteger);
 
+    }
+
+    private static void reusability() {
+
         Stream<String> stringValue = Stream.of("1", "2", "3");
 
         double result = stringValue
@@ -41,7 +49,7 @@ public class Parallelism {
         /**
          * Streams can be operated only once..it will through exception
          */
-        double result2 = stringValue.count();
-        System.out.println(result2);
+        double resultAgain = stringValue.count();
+        System.out.println(resultAgain);
     }
 }
