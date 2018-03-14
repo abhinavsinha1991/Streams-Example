@@ -14,10 +14,10 @@ public class StreamsComparison {
 
     /**
      * First Solution : Using Iterator
-     * @param list
-     * @return
+     * @param list: List<Integer>
+     * @return Integer
      */
-    private static int sumIterator(List<Integer> list) {
+    private static Integer sumIterator(List<Integer> list) {
         Iterator<Integer> it = list.iterator();
         int sum = 0;
         while (it.hasNext()) {
@@ -31,10 +31,10 @@ public class StreamsComparison {
 
     /**
      * Second Solution : Using Stream
-     * @param list
-     * @return
+     * @param list: List<Integer>
+     * @return Integer
      */
-    private static int sumStream(List<Integer> list) {
+    private static Integer sumStream(List<Integer> list) {
         return list.stream().filter(i -> i > 10).mapToInt(i -> i).sum();
     }
 

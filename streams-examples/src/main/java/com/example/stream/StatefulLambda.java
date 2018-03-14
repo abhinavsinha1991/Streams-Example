@@ -27,16 +27,12 @@ public class StatefulLambda {
         listOfIntegers
                 .stream()
                 // Don't do this! It uses a stateful lambda expression.
-                .map(element -> {
-                    serialStorage.add(element);
-                    return element;
-                })
+                .map(serialStorage::add)
                 .forEachOrdered(element -> System.out.print(element + " "));
         System.out.println("");
 
         serialStorage
-                .stream()
-                .forEachOrdered(element -> System.out.print(element + " "));
+                .forEach(element -> System.out.print(element + " "));
         System.out.println("");
     }
     private static void statefulWithParallel(List<Integer> listOfIntegers) {
@@ -47,16 +43,12 @@ public class StatefulLambda {
         listOfIntegers
                 .parallelStream()
                 // Don't do this! It uses a stateful lambda expression.
-                .map(element -> {
-                    parallelStorage.add(element);
-                    return element;
-                })
+                .map(parallelStorage::add)
                 .forEachOrdered(element -> System.out.print(element + " "));
         System.out.println("");
 
         parallelStorage
-                .stream()
-                .forEachOrdered(element -> System.out.print(element + " "));
+                .forEach(element -> System.out.print(element + " "));
         System.out.println("");
     }
 
